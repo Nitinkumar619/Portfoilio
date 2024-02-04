@@ -1,75 +1,559 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>
+    <head>
+        <style>
+                *{
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                .backgroundprofile{
+                    background-image: url('WhatsApp Image 2024-01-31 at 22.20.03.jpeg');
+                    margin: 0px 0px;
+                    
+                    height:90vh;
+                    width: 100vw;
+                    background-size: cover;
+                    background-attachment: fixed;
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #1e1e1e;
+                }
+                .backgroundprofile h{
+                    font-size: 4rem;
+                }
+                .backgroundprofile p{
+                    font-size: 3rem;
+                }
+                .name{
+                    text-align: center;
+                    margin-bottom: 16%;
+                }
+                .navbar{
+                    height:7vh;
+                    width:100vw;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
+                    background-color: white;
+                    position: sticky;
+                    top: 0;
+                    
+                }
+                .nav1{
+                    width: 50vw;
+                    display: inline;
+                    align-items: center;
+                    
 
-    <style>
-        *{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .Navbar{
-            height:12vh;
-            margin: 0% 0%;
-            display:flex;
-        }
-        .meetme{
-            display:flex;
-            height:12vh;
-            width:50vw;
-            color: white;
-            align-items: center;
-        }
-        .navoptions{
-            display: flex;
-            height:12vh;
-            width:50vw;
-            justify-content: space-evenly;
-            align-items: center;
-            
+                }
+                
+                .navbar ul {
+                    display: flex;
+                    justify-content: space-evenly;
+                    list-style: none;
+                }
+                .nav1 ul li a{
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: #1e1e1e;
+                    
+                }
+                .nav1 ul li{
+                    position: relative;
+                    
+                }
+                .nav1 ul li::after{
+                    content: '';
+                    height: 15%;
+                    width: 0%;
+                    background: #735631;
+                    position:absolute;
+                    left: 0;
+                    bottom: -8px;
+                    transition: 0.5s;
+                    
+                }
+                .nav1 ul li:hover:after{
+                    width: 100%;
+                }
 
-        }
-        .backgroundcolor{
-            background-image: linear-gradient(to right, #8b86e7, #8af0ff);
-            height: 70vh;
-            width:100%;
-            
-            
-        }
-        .profile{
-            height:50vh;
-            width:80vw;
-            background-color: white;
-            
+                .about{
+                    height: 100vh;
+                    width: 100vw;
+                    background-color: #f5f5f5;
 
-        }
-    </style>
-</head>
-<body>
-    <div class="backgroundcolor">
-        <div class="Navbar">
-            <div class="meetme">
-                <p style="margin-left: 5%;">MEETME</p>
+                }
+                .aboutcontent{
+                    height:75vh;
+                    width: 90vw;
+                    background-color: white;
+                    box-shadow: 0 5px 15px 0 rgba(0,0,0,.2);
+                    margin: 3.7% 5%;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+                .aboutleft{
+                    height:60vh;
+                    width: 70vh;
+
+                }
+                .aboutright{
+                    height:60vh;
+                    width: 70vh;
+                    
+
+                }
+                .identity{
+                    height: 18vh;
+                    width: 60vw;
+                    display: flex;
+                    
+                }
+                .profilephoto{
+                    height: 18vh;
+                    width: 10vw;
+                    background-color: black;
+                    background-image: url('Unknown.png');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    border-radius: 5%;
+                    
+
+                }
+                .intro{
+                    height:18vh;
+                    width: 29.5vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+                .intro ul{
+                    list-style: none;
+                    font-size: 1.4rem;
+                    margin-bottom: 10%;
+                }
+
+                .intro ul li{
+                    padding-top: 5.5%;
+                }
+                .skills{
+                    height: 43vh;
+                    width: 39.5vw;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+
+                .skillvalue{
+                    background-color: #e6c59c;;
+                    height: 1.5vh;
+                }
+
+                .services{
+                    background-color: #f5f5f5;
+                    height:27%;
+                    font-size: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 700;
+                }
+                .services h{
+                    margin-top: 3.5%;
+                }
+                .servicecon{
+                    height:100vh;
+                    background-color: #f5f5f5;
+                    display:  flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+                .service1{
+                    background-color: #f5f5f5;
+                    height: 93vh;
+                    width: 92vw;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-evenly;
+                }
+                .servicebox{
+                    height: 40vh;
+                    width: 50vh;
+                    background-color: white;
+                    border-radius: 5%;
+                    box-shadow: 0 8px 20px 0 rgba(0,0,0,.1);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    text-align: center;
+                    
+                }
+
+                .servicebox:hover .serviceimage{
+                    
+                    
+                        transform: scale(1.5);
+
+                }
+                
+                .servicebox h{
+                    font-size: 1.4rem;
+                    color: #1e1e1e;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    padding-top: 3%;
+
+                }
+                .serviceimage{
+                    transition: 0.2s;
+
+                }
+                
+
+                .award{
+                    height:50vh;
+                    /* background-image: url('Amazon_icon.jpeg') */
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.385),rgba(0, 0, 0, 0.5)), url("Amazon_icon.jpeg");
+                
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    background-attachment: fixed;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+
+                .awardbox{
+                    height:30vh;
+                    width: 20vw;
+                    display:flex;
+                    justify-content: space-around;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                .awardbox p{
+                    color: white;
+                    font-size: 1.5rem ;
+
+                }
+                .num{
+                    color: white;
+                    font-size: 1.7rem ;
+
+                }
+
+                .contact{
+                    height: 87.5vh;
+                    background-color: #f5f5f5;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;  
+                    flex-direction: column;
+
+                    
+                    
+                }
+
+                .contactbox{
+                    height:70vh;
+                    width: 90vw;
+                    background-color: white;
+                    box-shadow: 0 5px 15px 0 rgba(0,0,0,.3);
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+                .contactleft{
+                    height:65vh;
+                    width:40vw;
+                }
+                .sendbutton{
+                    height:6vh;
+                    width:11vw;
+                    background-color: #e6c59c;
+                    margin-left: 35%;
+                    margin-top: 4%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius:30px;
+                    color: white;
+                    transition: 0.2s;
+                    
+                    
+                }
+                .sendbutton:hover{
+                    transform: scale(1.2);
+                }
+                .message{
+                    height:44vh;
+                    width:40vw;
+                    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    
+                }
+
+                .yourname{
+                    height:4.5vh;
+                    width:38vw;
+                    border-color: #cde1f8;
+                    padding-left: 2%;
+                    
+                }
+                
+                .sendmessage{
+                    height: 18vh;
+                    width:38vw;
+                    border-color: #cde1f8;
+                    padding-left: 2%;
+                    
+                    
+                }
+                .contactright{
+                    height:57vh;
+                    width:40vw;
+                }
+
+                .sendbutton:hover{
+                    height: 50px;
+                    cursor: pointer;
+                }
+                
+                
+
+                .footer{
+                    height: 12.5vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 8px 20px 0 rgba(0,0,0,.1);
+                    background-color: #866844;
+                    color: white;
+                }
+
+                
+
+                
+                
+        </style>
+        <script src="https://kit.fontawesome.com/29e1357566.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+            <div class="backgroundprofile" id="home">
+                <div class="name">
+                    <h id="home">Hi! I'm Nitin!</h>
+                    <p>I am a software developer.</p>
+                </div>
+                
             </div>
-            <div class="navoptions">
-                <P>HOME</P>
-                <P>ABOUT</P>
-                <P>SERVICES</P>
-                <P>PAGES</P>
-                <P>BLOG</P>
-                <P>CONTACT</P>
-            </div>
 
-
-        </div>
-
-        <div class="profile">
-
-        </div>
+            <div  id="about" class="about">
+                
+                    <div class="navbar">
+                        <div class="nav1">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
         
-    </div>
+                        </ul>
+                        </div>
+        
+                    </div>
+                
 
-    
-</body>
+                <div class="aboutcontent">
+                    <div class="aboutleft">
+                        <div class="identity">
+                            <div class="profilephoto"></div>
+                            <div class="intro">
+                                <ul>
+                                <li><b>Name:</b> Nitin Kumar</li>
+
+                                <li><b>Profile:</b> Web developer</li>
+
+                                <li><b>Email:</b> iit2023264@iiita.ac.in</li>
+
+                                <li><b>Phone:</b> +91 7456079539</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <span style="font-size: 1.3rem; font-weight: 700;">Skills</span>
+                            <span>C 50%</span>
+                            <div class="skillvalue">
+                                <div style="background-color: #534032; height:1.5vh; width:20vw"></div>
+                            </div>
+                            <span>HTML 90%</span>
+                            <div class="skillvalue">
+                                <div style="background-color: #534032; height:1.5vh; width:35vw"></div>
+                            </div>
+                            <span>CSS 70%</span>
+                            <div class="skillvalue">
+                                <div style="background-color: #534032; height:1.5vh; width:27vw"></div>
+                            </div>
+                            
+                            <span>Javascript 30%</span>
+                            <div class="skillvalue"> 
+                                <div style="background-color: #534032; height:1.5vh; width:12vw"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="aboutright">
+                        <p style="font-size: 2.5rem; ">About me</p>
+                        <p style="font-size: 1.3rem; color:#4e4e4e;">I am a dedicated computer science student currently pursuing my education at IIITA (Indian Institute of Information Technology) Allahabad. My academic journey is fueled by a passion for understanding the intricacies of computer science, and I am committed to acquiring a deep and comprehensive knowledge of this dynamic field.</p>
+
+                        <p style="font-size: 1.3rem; color:#4e4e4e;">In the hallowed halls of IIITA, I engage in a diverse range of computer science subjects, from the theoretical foundations of algorithms and data structures to practical aspects of software development and system design. The curriculum challenges me to think critically, solve complex problems, and develop the analytical skills necessary for a successful career in the ever-evolving world of technology.</p>
+
+                    </div>
+
+                </div>
+
+                <div id="services" class="services">
+                    <h>SERVICES</h>
+
+                </div>
+
+                <div class="servicecon">
+                    <div class="service1">
+                        <div class="servicebox">
+                            <img class= "serviceimage" style="height: 18vh;width: 14vw;" src="6037f5fdd3bf0fb4897be2c6_kXjlUXUTJOx9fst3OiTPzDlDveLjW-ZXIsocjXJpRYS0I-FyZrLLiFemJF_fLMh1OGKNBGmslkPYOo2vA8hhMNYCerapzymfRloBvuKgh8pnlrhS5bd1fu5ImmgU2VwAjjmc8HDa.png">
+                            <h>WEB DESIGN</h>
+                            <div style="width:20vw"><p>As a skilled web designer, I offer a comprehensive range of services aimed at delivering visually captivating and functionally robust websites. </p></div>
+                            
+                        </div>
+                        <div class="servicebox">
+                            <img class= "serviceimage" style="height: 14vh;width: 8vw;" src="web desing.png">
+                            <h>WEB DEVELOPMENT</h>
+                            <div style="width:20vw;color: #4e4e4e;"><p>I bring expertise in creating dynamic and functional websites tailored to meet the unique needs of businesses and individuals. </p></div>
+                        </div>
+                        <div class="servicebox">
+                            <img class= "serviceimage" style="height: 19vh;width: 12vw;" src="pngimg.com - photo_camera_PNG101611.png">
+                            <h>PHOTOGRAPHY</h>
+                            <div style="width:20vw;color: #4e4e4e;"><p>my photography services are designed to bring your vision to life. </p></div>
+                        </div>
+                        <div class="servicebox">
+                            <img class= "serviceimage" style="height: 18vh;width: 10vw;" src="responsive design.png">
+                            <h>RESPONSIVE DESIGN</h>
+                            <div style="width:20vw;color: #4e4e4e;"><p>I offer comprehensive responsive design services, ensuring that functions flawlessly on desktops, tablets, and smartphones.</p></div>
+                        </div>
+                        <div class="servicebox">
+                            <img class= "serviceimage" style="height: 20vh;width: 14vw;" src="graphic-design-7154431-5816827.png">
+                            <h>GRAPHIC DESIGN</h>
+                            <div style="width:20vw;color: #4e4e4e;"><p>My graphic design services are crafted to make a lasting impression, blending creativity with strategic thinking. </p></div>
+                        </div>
+                        <div class="servicebox">
+                            <img class= "serviceimage" style="height: 18vh;width: 10vw;" src="digital-marketing-969x1024.png">
+                            <h>MARKETING SERVICES</h>
+                            <div style="width:20vw;color: #4e4e4e;"><p>My marketing services are designed to empower businesses through strategic and results-driven campaigns.</p></div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="award">
+                    <div class="awardbox">
+                        <i class="fa-solid fa-award" style="color: #ffffff; font-size: 7rem;"></i>
+                        <div  class="awarddiv" style="height: 20vh;">
+                        <p class="num">18</p>
+                        <p>AWARD WON</p>
+                        </div>
+                    </div>
+                    <div class="awardbox">
+                        <i class="fa-solid fa-circle-check" style="color: #ffffff; font-size: 6rem;"></i>
+                        <div style="height: 20vh;">
+                        <p  class="num"class="num">89</p>
+                        <p>WORKS COMPLETED</p>
+                        </div>
+                    </div>
+                    <div class="awardbox">
+                        <i class="fa-solid fa-address-book" style="color: #ffffff; font-size: 6rem;"></i>
+                        <div style="height: 20vh;">
+                        <p class="num">58</p>
+                        <p>TOTAL CLIENTS</p>
+                        </div>
+                    </div>
+                    <div class="awardbox">
+                        <i class="fa-solid fa-book" style="color: #ffffff;font-size: 6rem;"></i>
+                        <div style="height: 20vh;">
+                        <p class="num">4</p>
+                        <p>YEARS OF EXPERIENCE</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="contact" class="contact">
+                    <div class="contactbox">
+                        <div class="contactleft">
+                            <div style="height:13vh;width:40vw; display: flex; align-items: center;">
+                                <p style="font-size: 2rem; padding-top: 3%;">Send Us Message</p>
+                                
+                            </div>
+                            <div class="message" >
+                            <form action="" >
+                                <input class="yourname" type="text" placeholder="Your name">
+                            </form>
+                            <form action="" >
+                                <input class="yourname" type="text" placeholder="Your Email">
+                            </form>
+                            <form action="">
+                                <input class="yourname" type="text" placeholder="Subject">
+                            </form>
+                            <form action="" >
+                                <input class="sendmessage" type="text" placeholder="Message">
+                            </form>
+                            
+                            </div>
+                            <div class="sendbutton"><a style="text-decoration: none; color: white;">Send Message</a></div>
+                        </div>
+                        <div class="contactright">
+                            <p style="font-size: 2.5rem;">Get in Touch</p>
+                            <p style="font-size: 1.3rem; color:  #4e4e4e;">I'm excited to discuss how my skills and expertise can contribute to your project or business. Whether you're looking for web design, development, photography, graphic design, marketing services, or a combination of these, I'm here to help.</p>
+                            <p style="font-size: 1.3rem; color:  #4e4e4e;">Feel free to reach out to me for inquiries, collaborations, or just a friendly chat. I'm available via email and social media. I look forward to hearing from you!</p>
+                           
+                            
+                            <p style="padding-top: 1%; font-size: 1.2rem; color:  #4e4e4e;">🏡 Ranikhet, Dist. Almora,Uttarakhand</p>
+                            <p style=" font-size: 1.2rem; color:  #4e4e4e;">📱 +91 7456079539</p>
+                            <p style=" font-size: 1.2rem; color:  #4e4e4e;">✉️ iit2023264@iiita.ac.in</p>
+                           
+                        </div>
+                       
+                    </div>
+                    
+                    
+                </div>
+
+                <div class="footer">
+                    <span>© Copyright Nitin. All Rights Reserved</span>
+                    <span style="margin-top: 0.5%;">Designed by Nitin Kumar</span>
+                </div>
+                
+
+            </div>
+
+    </body>
 </html>
+
+
+
+
